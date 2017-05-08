@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div class="header-wrapper">
+				<a href="">
+					<span v-for = "a in message" :style = "{color: getColor()}">{{a}}</span>
+				</a>
+			</div>
+		</header>
+		<div id="content">
+			<h1>
+				1.鼠标效果：http://codepen.io/jjyepez/pen/qmBMNq  
+				两个选项：1.vue版本；2.原声js版本
+				</br>
+				2.下拉效果：http://codepen.io/lemmin/pen/zwYWbY </br>
+				3.创建json数据
+			</br>
+			4.胖子vue
+			</h1>
+		<div class="main">
+			<ul class="featured">
+				<li class="status" v-for="item in textList">
+					<a class="thumbnail" href="">
+						<img :src="item.img" width="200" height="200" alt="">
+					</a>
+					<div class="title">
+						<a href="" v-text="item.textName"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/global.js"></script>
+</body>
+</html>
