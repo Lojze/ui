@@ -27,14 +27,18 @@ var vm = new Vue({
 			    var res = respone.data;
 			    if (res.status =="0") {
 		          	_this.textList = res.result;
-		          	console.log(_this.textList)
 		        }
 			})
-			// .catch(function(error){
-			//     console.log(error);
-			// });
 
 		}
 
-	}
+	},
+	beforeMount:function(){
+        console.log('3-beforeMount 挂载之前');
+    },
+    updated:function(){
+        console.log('6-updated 被更新后');
+    },
+
+
 })

@@ -10,30 +10,31 @@
 	<div id="wrapper">
 		<header>
 			<div class="header-wrapper">
-				<a href="">
-					<span v-for = "a in message" :style = "{color: getColor()}">{{a}}</span>
-				</a>
+					<span v-for = "a in message" :style = "{color: getColor()}" v-text="a"></span>
 			</div>
 		</header>
 		<div id="content">
 			<h1>
-				1.鼠标效果：http://codepen.io/jjyepez/pen/qmBMNq  
-				两个选项：1.vue版本；2.原声js版本
-				</br>
-				2.下拉效果：http://codepen.io/lemmin/pen/zwYWbY </br>
-				3.创建json数据
-			</br>
-			4.胖子vue
+				2.下拉效果：http://codepen.io/lemmin/pen/zwYWbY
 			</h1>
 		<div class="main">
 			<ul class="featured">
-				<li class="status" v-for="item in textList">
-					<a class="thumbnail" href="">
-						<img :src="item.img" width="200" height="200" alt="">
-					</a>
+				<li class="status " v-for="item in textList">
 					<div class="title">
-						<a href="" v-text="item.textName"></a>
+						<p v-text="item.textName"></p>
 					</div>
+					<div class="thumbnail" >
+						<div class="pos-box">
+							<div class="Choice">
+								<a :href="item.js">原声demo</a>
+								<a :href="item.vue">vueDemo</a>
+							</div>
+						</div>
+						<div class="describe">
+							<p v-text="item.title"></p>
+						</div>
+					</div>
+					
 				</li>
 			</ul>
 		</div>
