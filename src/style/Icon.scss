@@ -1,0 +1,10 @@
+@import "./common/animation.scss";
+[class^="z-icon-"], [class*="z-icon-"] {
+  // height: 1em;
+  // width: 1em;
+}
+
+
+.icon-loading {
+  animation: rotating 1s infinite linear;
+}

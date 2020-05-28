@@ -1,10 +1,15 @@
 import icon from './Icon/index'
+import button from './Button/index'
 
-// 字体样式
+// 总样式
+import '../style/index.scss'
+
+// 图标
 import '../style/fonts/iconfont'
 
 const components = {
-    icon
+    icon,
+    button
 };
 let z = {
     install(Vue) {
@@ -15,7 +20,8 @@ let z = {
 }
 export default z;
 export {
-    icon
+    icon,
+    button
 }
 
 

@@ -1,0 +1,26 @@
+@import './common/var.scss';
+@import './common/extend.scss';
+@import './common/mixin.scss';
+@include b(button) {
+    cursor: pointer;           // 鼠标变小手
+    align-items: center;       // 轴对齐
+    display: inline-flex;    // 开启flex模式, 由于还要保持行的特性, 所以是inline-flex
+    vertical-align: middle;    // 中对齐, 为了以后的icon准备的
+    justify-content: center;   // 居中
+    background-color: white;   // 白色
+    outline: 0;                 // 去掉聚焦时的轮廓
+    border-radius: 6px;         // 感觉圆角6还是挺友好的, 没有做成可配置
+    transition: all 0.1s;       // 动画当然要有, 交互体验很重要
+    &:active {             // 点击的时候
+        box-shadow: none;   // 嘿嘿这个是我的ui组件独有的风格
+        opacity: 0.7;        // 微微一暗, 以示点击到了
+        transform: translateX(2px) translateY(2px) scale(0.9); // 会有个小小的位移
+    }
+    &:hover { // 悬停变色
+        text-decoration: none;
+    }
+    @include commonShadow($--color-black); // 这个下面会说👇
+    @at-root { 
+        @include commonType(z-button--)  // 这个下面会说👇
+    };
+}

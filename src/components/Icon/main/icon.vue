@@ -1,12 +1,16 @@
 <template>
   <!-- 我发现不加这个他们就不居中 -->
-  <div style="display: inline-flex;">
+  <div :style="{
+    display: 'inline-flex',
+    height: iconSize,
+    width: iconSize
+    }">
     <svg
       :style="{ fill: color }"
       :class="[
-        'cc-icon-' + name,
+        'z-icon-' + name,
         {
-          'icon-loading': ~name.indexOf('load'),
+          'icon-loading': ~name.indexOf('reload'),
         },
       ]"
     >
@@ -25,8 +29,19 @@ export default {
     // 图标的颜色
     color: {
       type: String,
-      default: "black",
+      default: "#555",
+    },
+    size: {
+      // 用户可能传入带单位 和 不带单位的
+      type: [Number, String],
+      default: "1em",
     },
   },
+  computed: {
+    iconSize() {
+      if (typeof this.size === "number") return this.size + "px";
+      else return this.size;
+    }
+  }
 };
 </script>
